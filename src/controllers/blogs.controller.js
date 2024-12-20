@@ -12,7 +12,6 @@ const createBlog = asyncHandler(async (req,res) =>{
 
     const blogImgLocalPath = req.file?.path;
     if(!blogImgLocalPath) throw new ApiError(400, "blog img is required");
-    console.log(blogImgLocalPath);
     const bImg = await uploadOnCloudinary(blogImgLocalPath);
     if(!bImg) throw new ApiError(400, "img is not uploaded please check internet");
     const createBlog = await Blogs.create({
