@@ -14,7 +14,7 @@ app.use(cors({
     credentials : true,
 }));
 
-app.use("/user", userRoutes)
+app.use("/user/auth", userRoutes)
 app.use("/blog", blogRoutes)
 
 export default app;

@@ -5,6 +5,7 @@ import {
     register,
     loginUser,
     logoutUser,
+    getCurrentUser
 } from '../controllers/user.controller.js'
 
 router.route('/register')
@@ -15,5 +16,8 @@ router.route('/login')
 
 router.route('/logout')
 .get(verifyJWT,logoutUser);
+
+router.route('/me')
+.get(verifyJWT, getCurrentUser);
 
 export default router;
